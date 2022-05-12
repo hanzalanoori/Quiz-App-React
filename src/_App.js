@@ -4,23 +4,39 @@ export default function App() {
 	const questions = [
 		{
 			questionText: 'What is the capital of USA?',
-			answerOptions: ['New York','London','Washington','Dublin'],
-			correct: "Washington",
+			answerOptions: [
+				{ answerText: 'New York', isCorrect: false },
+				{ answerText: 'London', isCorrect: false },
+				{ answerText: 'Washington', isCorrect: true },
+				{ answerText: 'Dublin', isCorrect: false },
+			],
 		},
 		{
 			questionText: 'Who is CEO of Facebook?',
-			answerOptions: ['Jeff Bezos','Mark Zuckerberg','Bill Gates','Tony Stark'],
-			correct: "Mark Zuckerberg",
+			answerOptions: [
+				{ answerText: 'Jeff Bezos', isCorrect: false },
+				{ answerText: 'Mark Zuckerberg', isCorrect: true },
+				{ answerText: 'Bill Gates', isCorrect: false },
+				{ answerText: 'Tony Stark', isCorrect: false },
+			],
 		},
 		{
 			questionText: 'The iPhone was created by which company?',
-			answerOptions: ['Apple','Intel','Amazon','Microsoft'], 
-			correct: "Apple",
+			answerOptions: [
+				{ answerText: 'Apple', isCorrect: true },
+				{ answerText: 'Intel', isCorrect: false },
+				{ answerText: 'Amazon', isCorrect: false },
+				{ answerText: 'Microsoft', isCorrect: false },
+			],
 		},
 		{
 			questionText: 'How many Harry Potter books are there?',
-			answerOptions: ['1','4','6','7'], 
-			correct: "7",
+			answerOptions: [
+				{ answerText: '1', isCorrect: false },
+				{ answerText: '4', isCorrect: false },
+				{ answerText: '6', isCorrect: false },
+				{ answerText: '7', isCorrect: true },
+			],
 		},
 	];
 
@@ -28,8 +44,8 @@ export default function App() {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
-	const handleAnswerOptionClick = (isCorrect,answer) => {
-		if (isCorrect == answer) {
+	const handleAnswerOptionClick = (isCorrect) => {
+		if (isCorrect) {
 			setScore(score + 1);
 		}
 
@@ -55,8 +71,8 @@ export default function App() {
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption, index) => (
-							<button key={index} onClick={() => handleAnswerOptionClick(questions[currentQuestion].correct,answerOption)}>{answerOption}</button>
+						{questions[currentQuestion].answerOptions.map((answerOption) => (
+							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
 				</>

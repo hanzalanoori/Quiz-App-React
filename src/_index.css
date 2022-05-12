@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-color: #dddde1;
+  background-color: #03017b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,13 +20,13 @@ body {
 }
 
 .app {
-  background-color: #88869b;
+  background-color: #1201a9;
   width: 450px;
   min-height: 200px;
   height: min-content;
   border-radius: 15px;
   padding: 20px;
-
+  box-shadow: 10px 10px 42px 0px rgba(0, 26, 36, 0.816);
   display: flex;
   justify-content: space-evenly;
 }
@@ -77,13 +77,13 @@ button {
   width: 100%;
   font-size: 16px;
   color: #ffffff;
-  background-color: #747fa9;
+  background-color: #252d4a;
   border-radius: 15px;
   display: flex;
   padding: 5px;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid #97acc0;
+  border: 5px solid #234668;
   cursor: pointer;
 }
 
